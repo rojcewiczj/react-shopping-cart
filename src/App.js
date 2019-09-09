@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import data from './data';
 import ProductContext from "./contexts/ProductContext";
 import CartContext from "./contexts/CartContext"
-import RemoveContext from './contexts/RemoveContext'
+
 // Components
 import Navigation from './components/Navigation';
 import Products from './components/Products';
@@ -16,11 +16,12 @@ function App() {
 	const addItem = item => {
 		setCart([...cart, item]);
 	};
-
+   
+	
 	return (
 	<ProductContext.Provider value={{ products, addItem }}>
-		<CartContext.Provider value={{cart}}>
-			
+		<CartContext.Provider value={cart}>
+
 		<div className="App">
 			
 			<Navigation />
