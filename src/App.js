@@ -12,15 +12,16 @@ import ShoppingCart from './components/ShoppingCart';
 function App() {
 	const [products] = useState(data);
 	const [cart, setCart] = useState([]);
-
 	const addItem = item => {
 		setCart([...cart, item]);
 	};
-   
+    const removeItem = item=> {
+		setCart([...cart, - item])
+	}
 	
 	return (
 	<ProductContext.Provider value={{ products, addItem }}>
-		<CartContext.Provider value={cart}>
+		<CartContext.Provider value={{cart, removeItem}}>
 
 		<div className="App">
 			
